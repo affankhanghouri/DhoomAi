@@ -1,0 +1,1 @@
+"""Creative schema placeholder."""

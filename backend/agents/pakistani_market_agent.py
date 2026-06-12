@@ -1,0 +1,1 @@
+"""Pakistani market agent placeholder."""

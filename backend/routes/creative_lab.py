@@ -1,0 +1,1 @@
+"""Creative lab routes."""

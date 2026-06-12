@@ -1,0 +1,103 @@
+CAMPAIGN_QUALITY_JSON_SCHEMA = {
+    "name": "campaign_quality_output",
+    "schema": {
+        "type": "object",
+        "additionalProperties": False,
+        "required": [
+            "final_campaign",
+            "quality_report",
+        ],
+        "properties": {
+            "final_campaign": {
+                "type": "object",
+                "additionalProperties": False,
+                "required": [
+                    "campaign_headline",
+                    "campaign_angle",
+                    "buyer_insight",
+                    "caption",
+                    "whatsapp_copy",
+                    "offer_idea",
+                    "story_flow",
+                    "poster_direction",
+                    "reel_direction",
+                    "primary_cta",
+                    "do_rules",
+                    "avoid_rules",
+                    "confidence",
+                ],
+                "properties": {
+                    "campaign_headline": {"type": "string"},
+                    "campaign_angle": {"type": "string"},
+                    "buyer_insight": {"type": "string"},
+                    "caption": {"type": "string"},
+                    "whatsapp_copy": {"type": "string"},
+                    "offer_idea": {"type": "string"},
+                    "story_flow": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 5,
+                        "items": {"type": "string"},
+                    },
+                    "poster_direction": {"type": "string"},
+                    "reel_direction": {"type": "string"},
+                    "primary_cta": {"type": "string"},
+                    "do_rules": {
+                        "type": "array",
+                        "minItems": 3,
+                        "maxItems": 6,
+                        "items": {"type": "string"},
+                    },
+                    "avoid_rules": {
+                        "type": "array",
+                        "minItems": 3,
+                        "maxItems": 6,
+                        "items": {"type": "string"},
+                    },
+                    "confidence": {"type": "number"},
+                },
+            },
+            "quality_report": {
+                "type": "object",
+                "additionalProperties": False,
+                "required": [
+                    "campaign_score",
+                    "quality_status",
+                    "quality_notes",
+                    "improvements_applied",
+                    "risk_flags",
+                ],
+                "properties": {
+                    "campaign_score": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100,
+                    },
+                    "quality_status": {
+                        "type": "string",
+                        "description": "approved, improved, or needs_review",
+                    },
+                    "quality_notes": {
+                        "type": "array",
+                        "minItems": 3,
+                        "maxItems": 8,
+                        "items": {"type": "string"},
+                    },
+                    "improvements_applied": {
+                        "type": "array",
+                        "minItems": 2,
+                        "maxItems": 8,
+                        "items": {"type": "string"},
+                    },
+                    "risk_flags": {
+                        "type": "array",
+                        "minItems": 0,
+                        "maxItems": 6,
+                        "items": {"type": "string"},
+                    },
+                },
+            },
+        },
+    },
+    "strict": True,
+}
